@@ -1,0 +1,288 @@
+:root {
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --dark-bg: #0a0a0f;
+    --grid-blue: #1a1a2e;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    color: #3c4043;
+}
+
+.header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0.8rem 1.5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #3c4043;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 5rem 1.5rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.classroom-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.classroom-card:hover {
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+}
+
+.card-banner {
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #3c4043;
+}
+
+.teacher {
+    margin: 0.5rem 0;
+    color: #5f6368;
+    font-size: 0.875rem;
+}
+
+.description {
+    margin: 0.5rem 0;
+    color: #3c4043;
+}
+
+.card-footer {
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.due {
+    font-size: 0.875rem;
+    color: #5f6368;
+}
+
+.classroom-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: none;
+    z-index: 1000;
+    transform-origin: center;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.classroom-view.active {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.classroom-header {
+    background-color: inherit;
+    padding: 2rem;
+    color: white;
+}
+
+.classroom-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.classroom-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    min-height: calc(100vh - 200px);
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.classroom-content.visible {
+    opacity: 1;
+}
+
+.stream-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(60,64,67,0.3);
+}
+
+.announcements, .classwork {
+    padding: 1.5rem;
+}
+
+.announcements h2, .classwork h2 {
+    color: #3c4043;
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(60,64,67,0.3);
+    height: fit-content;
+}
+
+.announcement-item, .assignment-item {
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.announcement-item:last-child, .assignment-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.announcement-meta, .assignment-meta {
+    color: #5f6368;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.upcoming-work h3 {
+    color: #3c4043;
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.back-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.class-nav .class-list {
+    margin-top: 1rem;
+}
+
+.class-item {
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.class-item:hover {
+    background-color: #f1f3f4;
+}
+
+.class-item.active {
+    background-color: #e8f0fe;
+    color: #1967d2;
+}
+
+.past-work {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.past-work-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.past-work-item:last-child {
+    border-bottom: none;
+}
+
+.past-work-meta {
+    color: #5f6368;
+    font-size: 0.875rem;
+}
+
+.stream-section > div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease-out;
+}
+
+.stream-section > div.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.class-nav, .upcoming-work {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease-out;
+}
+
+.class-nav.fade-in, .upcoming-work.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+}

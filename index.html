@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netchain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Your Classroom</h1>
+    </div>
+    <div class="grid-container">
+        <div class="classroom-card" data-classroom="math">
+            <div class="card-banner" style="background-color: #4285f4"></div>
+            <div class="card-content">
+                <h2>Mathematics</h2>
+                <p class="teacher">Ms. Johnson</p>
+                <p class="description">Advanced Algorithms</p>
+            </div>
+            <div class="card-footer">
+                <span class="due">No work due</span>
+            </div>
+        </div>
+        <div class="classroom-card" data-classroom="physics">
+            <div class="card-banner" style="background-color: #0f9d58"></div>
+            <div class="card-content">
+                <h2>Physics</h2>
+                <p class="teacher">Mr. Smith</p>
+                <p class="description">Quantum Mechanics</p>
+            </div>
+            <div class="card-footer">
+                <span class="due">Assignment due today</span>
+            </div>
+        </div>
+        <div class="classroom-card" data-classroom="programming">
+            <div class="card-banner" style="background-color: #db4437"></div>
+            <div class="card-content">
+                <h2>Programming</h2>
+                <p class="teacher">Dr. Zhang</p>
+                <p class="description">Neural Networks</p>
+            </div>
+            <div class="card-footer">
+                <span class="due">2 assignments due</span>
+            </div>
+        </div>
+    </div>
+    <div class="classroom-view">
+        <div class="classroom-header">
+            <button class="back-button">← Back to Classes</button>
+        </div>
+        <div class="classroom-content">
+            <div class="stream-section">
+                <div class="announcements">
+                    <h2>Announcements</h2>
+                    <div class="announcement-list"></div>
+                </div>
+                <div class="classwork">
+                    <h2>Current Assignments</h2>
+                    <div class="assignment-list"></div>
+                </div>
+                <div class="past-work">
+                    <h2>Past Work</h2>
+                    <div class="past-work-list"></div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="class-nav">
+                    <h3>Your Classes</h3>
+                    <div class="class-list"></div>
+                </div>
+                <div class="upcoming-work">
+                    <h3>Upcoming</h3>
+                    <div class="upcoming-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
